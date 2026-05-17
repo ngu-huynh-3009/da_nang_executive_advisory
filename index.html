@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNInvest - Da Nang Investment Advisory Deck</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter and Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        danang: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#0066cc',
+                            700: '#004c99',
+                            800: '#003366',
+                            950: '#03142c',
+                        },
+                        gold: {
+                            400: '#f59e0b',
+                            500: '#d97706',
+                            600: '#b45309',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth, hardware-accelerated slide transitions */
+        .slide-container {
+            display: grid;
+            grid-template-columns: 100%;
+            overflow: hidden;
+        }
+        
+        .slide-item {
+            grid-area: 1/1/2/2;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .slide-item.active {
+            opacity: 1;
+            transform: translateX(0);
+            pointer-events: auto;
+            z-index: 20;
+        }
+
+        .slide-item.exit-left {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        /* Ambient background element animations */
+        @keyframes subtle-drift {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(4%, 3%) scale(1.05); }
+        }
+        .bg-drift {
+            animation: subtle-drift 12s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-danang-950 text-slate-100 font-sans selection:bg-gold-500 selection:text-white h-screen flex flex-col justify-between overflow-hidden">
+    <script>
+  // Thay 'matkhaucuanban' bằng mật khẩu bạn muốn đặt
+  const password = "Dan@ng2026"; 
+  let enter = prompt("Vui lòng nhập mật khẩu để truy cập trang web:");
+  
+  while (enter !== password) {
+    enter = prompt("Sai mật khẩu! Vui lòng nhập lại:");
+  }
+</script>
+
+    <!-- Header/Navigation Bar -->
+    <header class="w-full bg-danang-950/90 backdrop-blur-md border-b border-white/10 py-4 px-6 md:px-12 flex items-center justify-between shrink-0 z-30">
+        <div class="flex items-center space-x-3">
+            <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-gold-500 to-danang-500 flex items-center justify-center shadow-md">
+                <i class="fa-solid fa-anchor text-white text-sm"></i>
+            </div>
+            <div>
+                <h1 class="font-serif text-sm md:text-base font-bold text-white tracking-widest">
+                    DN<span class="text-gold-400">INVEST</span>
+                </h1>
+                <p class="text-[8px] uppercase text-slate-400 tracking-wider font-semibold">Da Nang Executive Advisory</p>
+            </div>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <span class="text-xs font-mono text-slate-400 hidden sm:inline">OFFICIAL PORTFOLIO DECK</span>
+            <div class="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-[10px] text-slate-300 font-mono" id="slide-badge">
+                Overview
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Interactive Slide Area -->
+    <main class="flex-grow relative flex items-center justify-center px-4 md:px-12 py-6 overflow-hidden z-10">
+        <!-- Ambient animated glowing lights in background -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-danang-700/20 via-danang-950 to-danang-950 -z-10"></div>
+        <div class="absolute top-1/3 left-1/4 w-80 h-80 rounded-full bg-danang-500/10 blur-[120px] bg-drift -z-10"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-gold-600/10 blur-[120px] bg-drift -z-10" style="animation-delay: -6s;"></div>
+
+        <!-- Single slide stack container -->
+        <div class="w-full max-w-5xl bg-gradient-to-b from-danang-900/40 to-danang-950/60 rounded-2xl border border-white/10 p-6 md:p-12 shadow-2xl relative backdrop-blur-sm min-h-[480px] flex items-center">
+            
+            <div class="slide-container w-full h-full">
+
+                <!-- SLIDE 0: OVERVIEW -->
+                <div id="slide-0" class="slide-item active w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Label badge -->
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-gold-500/10 border border-gold-500/20">
+                            <span class="flex h-2 w-2 rounded-full bg-gold-400 animate-pulse"></span>
+                            <span class="text-[10px] text-gold-400 font-semibold uppercase tracking-wider">Gateway Strategy / Chiến Lược Cửa Ngõ</span>
+                        </div>
+                        
+                        <div class="space-y-3">
+                            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white leading-tight">
+                                Connecting Global Capital to <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-gold-400 to-amber-300">Da Nang's Economy</span>
+                            </h2>
+                            <h3 class="text-base md:text-lg font-medium text-slate-400 border-l-2 border-gold-500 pl-3">
+                                Kết nối dòng vốn toàn cầu đến nền kinh tế năng động của thành phố Đà Nẵng
+                            </h3>
+                        </div>
+
+                        <div class="space-y-2">
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light">
+                                Welcome to DNInvest, the premier boutique advisory created specifically for international firms seeking low-friction, high-compliance setups in Central Vietnam. We serve multi-industry clients at every milestone of their investment lifecycle.
+                            </p>
+                            <p class="text-xs md:text-sm text-slate-400 italic font-light">
+                                Chào mừng bạn đến với DNInvest, đơn vị tư vấn cao cấp được thành lập dành riêng cho các doanh nghiệp nước ngoài mong muốn triển khai kinh doanh an toàn, đúng pháp luật tại miền Trung. Chúng tôi hỗ trợ đa ngành tại mọi cột mốc phát triển.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Visual Metrics & Scope -->
+                    <div class="lg:col-span-5 bg-white/5 p-6 rounded-xl border border-white/10 space-y-4">
+                        <h4 class="text-xs font-bold uppercase text-slate-300 tracking-wider">Core Target Profile / Khách Hàng Mục Tiêu</h4>
+                        <div class="space-y-3 text-xs">
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-earth-americas text-gold-400 mt-1"></i>
+                                <div>
+                                    <p class="font-bold text-slate-200">Foreign Multi-industry Enterprises</p>
+                                    <p class="text-[10px] text-slate-400">Doanh nghiệp nước ngoài hoạt động đa lĩnh vực.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-3">
+                                <i class="fa-solid fa-arrows-to-dot text-gold-400 mt-1"></i>
+                                <div>
+                                    <p class="font-bold text-slate-200">Expansion & Setup Teams</p>
+                                    <p class="text-[10px] text-slate-400">Đơn vị đang lên kế hoạch gia nhập thị trường Đà Nẵng.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Progress Action Guide -->
+                        <div class="pt-4 border-t border-white/5">
+                            <button onclick="changeSlide(1)" class="w-full py-3 rounded-lg bg-gradient-to-r from-gold-500 to-gold-600 text-white font-semibold text-xs hover:shadow-lg hover:shadow-gold-500/20 transition-all">
+                                Begin Package Review →
+                                <span class="block text-[9px] font-normal opacity-70">Bắt Đầu Tìm Hiểu Các Gói Dịch Vụ</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 1: WELCOME MEETING -->
+                <div id="slide-1" class="slide-item w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-sky-500/10 border border-sky-500/20">
+                            <span class="text-[10px] text-sky-400 font-semibold uppercase tracking-wider">PACKAGE 01 / GÓI 01</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">
+                                Welcome Meeting <span class="text-slate-400 font-sans text-xl md:text-2xl block lg:inline">(Free of Charge)</span>
+                            </h2>
+                            <h3 class="text-base md:text-lg font-medium text-slate-400 border-l-2 border-gold-500 pl-3">
+                                Buổi Gặp Gỡ Chào Mừng (Hoàn Toàn Miễn Phí)
+                            </h3>
+                        </div>
+
+                        <div class="space-y-2">
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light">
+                                Initiate your entry into Da Nang with an interactive baseline diagnostic. In this session, our leadership listens to your specific expansion goals, introduces localized risk frameworks, and identifies the perfect service matches for your business model.
+                            </p>
+                            <p class="text-xs md:text-sm text-slate-400 italic font-light">
+                                Khởi động hành trình gia nhập Đà Nẵng bằng buổi đánh giá nhu cầu trực quan. Chúng tôi sẽ lắng nghe các mục tiêu phát triển đặc thù của bạn, giới thiệu khung phòng ngừa rủi ro cục bộ và tư vấn lựa chọn các gói dịch vụ tiếp theo phù hợp nhất.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Advisor Profile & Details -->
+                    <div class="lg:col-span-5 bg-white/5 p-6 rounded-xl border border-white/10 space-y-5">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase text-slate-400 font-bold">Assigned Advisory Lead</h4>
+                                <p class="text-sm font-bold text-white">Chief Business Intake Officer</p>
+                                <p class="text-[9px] text-slate-500">Giám đốc Khai thác & Tiếp nhận Dự án đầu tư</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pt-4 border-t border-white/5 text-xs">
+                            <p class="text-slate-300 font-medium">Expertise / Chuyên môn hỗ trợ:</p>
+                            <p class="text-slate-400 text-[11px] leading-relaxed">
+                                Highly skilled in strategic triage and mapping initial corporate intent to exact provincial regulatory pathways.
+                            </p>
+                            <p class="text-slate-500 text-[10px] italic leading-relaxed">
+                                Kinh nghiệm chuyên sâu trong phân tích nhu cầu ban đầu và thiết lập lộ trình thực thi tương thích với cơ chế pháp lý địa phương.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2: NEW LEGAL ENTITY SETUP -->
+                <div id="slide-2" class="slide-item w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20">
+                            <span class="text-[10px] text-emerald-400 font-semibold uppercase tracking-wider">PACKAGE 02 / GÓI 02</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">
+                                Establishing New Legal Entities
+                            </h2>
+                            <h3 class="text-base md:text-lg font-medium text-slate-400 border-l-2 border-gold-500 pl-3">
+                                Thành Lập Mới Pháp Nhân tại Việt Nam
+                            </h3>
+                        </div>
+
+                        <div class="space-y-2">
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light">
+                                Fast-track your commercial presence. Our primary package secures your Investment Registration Certificate (IRC) and Enterprise Registration Certificate (ERC). To scale seamlessly, we offer customizable expansions covering Expat Visas, Work Permits, Premium Executive Housing, and Temporary Residence Cards (TRC).
+                            </p>
+                            <p class="text-xs md:text-sm text-slate-400 italic font-light">
+                                Đơn giản hóa thủ tục hiện diện thương mại. Gói cơ bản hỗ trợ hoàn tất nhanh chóng IRC & ERC. Khách hàng có thể linh hoạt mở rộng quy mô với các tùy chọn như Visa chuyên gia, Giấy phép lao động, Căn hộ/Văn phòng cao cấp, và Thẻ tạm trú (TRC).
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Advisor Profile & Details -->
+                    <div class="lg:col-span-5 bg-white/5 p-6 rounded-xl border border-white/10 space-y-5">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                <i class="fa-solid fa-file-shield"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase text-slate-400 font-bold">Assigned Advisory Lead</h4>
+                                <p class="text-sm font-bold text-white">Senior Licensing Specialist</p>
+                                <p class="text-[9px] text-slate-500">Chuyên viên Pháp lý Doanh nghiệp & Quan hệ Sở ban ngành</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pt-4 border-t border-white/5 text-xs">
+                            <p class="text-slate-300 font-medium">Expertise / Chuyên môn hỗ trợ:</p>
+                            <p class="text-slate-400 text-[11px] leading-relaxed">
+                                Experienced local expert with an extensive, highly integrated communication network with local ministries and investment zones in Central Vietnam.
+                            </p>
+                            <p class="text-slate-500 text-[10px] italic leading-relaxed">
+                                Chuyên viên giàu kinh nghiệm thực chiến địa phương, sở hữu network đối ngoại sâu rộng với các ban ngành và ban quản lý khu công nghiệp.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3: LEGAL OPERATIONS ADVISORY -->
+                <div id="slide-3" class="slide-item w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20">
+                            <span class="text-[10px] text-amber-400 font-semibold uppercase tracking-wider">PACKAGE 03 / GÓI 03</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">
+                                Operational Legal Advisory
+                            </h2>
+                            <h3 class="text-base md:text-lg font-medium text-slate-400 border-l-2 border-gold-500 pl-3">
+                                Tư Vấn Vận Hành (Chuyên Sâu Pháp Lý)
+                            </h3>
+                        </div>
+
+                        <div class="space-y-2">
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light">
+                                Protect your enterprise against operating risks. Our specialists manage precision economic contract drafting, coordinate commercial trade assessments, and handle internal or external corporate dispute resolution structures safely and cleanly.
+                            </p>
+                            <p class="text-xs md:text-sm text-slate-400 italic font-light">
+                                Bảo vệ doanh nghiệp trước các rủi ro vận hành thường nhật. Chúng tôi chịu trách nhiệm soạn thảo hợp đồng kinh tế chặt chẽ, thẩm định thương mại quốc tế và thiết lập phương án hòa giải/giải quyết tranh chấp nội bộ cũng như bên ngoài một cách an toàn nhất.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Advisor Profile & Details -->
+                    <div class="lg:col-span-5 bg-white/5 p-6 rounded-xl border border-white/10 space-y-5">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400">
+                                <i class="fa-solid fa-gavel"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase text-slate-400 font-bold">Assigned Advisory Lead</h4>
+                                <p class="text-sm font-bold text-white">Licensed Corporate Litigator & Attorney</p>
+                                <p class="text-[9px] text-slate-500">Luật sư Thương mại & Đại diện Pháp luật Doanh nghiệp</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pt-4 border-t border-white/5 text-xs">
+                            <p class="text-slate-300 font-medium">Expertise / Chuyên môn hỗ trợ:</p>
+                            <p class="text-slate-400 text-[11px] leading-relaxed">
+                                Certified legal counselor with multiple bar memberships, holding extensive years of active litigation and commercial mediation before regional tribunals.
+                            </p>
+                            <p class="text-slate-500 text-[10px] italic leading-relaxed">
+                                Luật sư có chứng chỉ hành nghề và tư cách tố tụng, dày dặn kinh nghiệm giải quyết tranh chấp kinh tế và bảo vệ quyền lợi hợp pháp tại Tòa án.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4: BUSINESS STRATEGY SUITE -->
+                <div id="slide-4" class="slide-item w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20">
+                            <span class="text-[10px] text-indigo-400 font-semibold uppercase tracking-wider">PACKAGE 04 / GÓI 04</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">
+                                Business Strategy & Growth Advisory
+                            </h2>
+                            <h3 class="text-base md:text-lg font-medium text-slate-400 border-l-2 border-gold-500 pl-3">
+                                Tư Vấn Vận Hành (Định Hướng Chiến Lược)
+                            </h3>
+                        </div>
+
+                        <div class="space-y-2">
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light">
+                                Establish dynamic competitive advantages customized for the local consumer culture. We provide comprehensive strategic roadmaps including tailored market entry plans, HR recruitment and organizational design, and localization-focused brand and marketing consulting.
+                            </p>
+                            <p class="text-xs md:text-sm text-slate-400 italic font-light">
+                                Kiến tạo lợi thế cạnh tranh động dựa trên sự am hiểu sâu sắc hành vi tiêu dùng địa phương. Chúng tôi cung cấp giải pháp chiến lược toàn diện gồm: thiết kế mô hình kinh doanh, tuyển dụng nhân sự cấp cao, định vị thương hiệu và xây dựng chiến dịch tiếp thị nội địa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Advisor Profile & Details -->
+                    <div class="lg:col-span-5 bg-white/5 p-6 rounded-xl border border-white/10 space-y-5">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                                <i class="fa-solid fa-compass"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase text-slate-400 font-bold">Assigned Advisory Lead</h4>
+                                <p class="text-sm font-bold text-white">Senior Growth Consultant</p>
+                                <p class="text-[9px] text-slate-500">Chuyên gia Chiến lược Phát triển Doanh nghiệp Quốc tế</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pt-4 border-t border-white/5 text-xs">
+                            <p class="text-slate-300 font-medium">Expertise / Chuyên môn hỗ trợ:</p>
+                            <p class="text-slate-400 text-[11px] leading-relaxed">
+                                Strategist specializing in SE Asian brand penetration, experienced in aligning international operating standards with localized consumer expectations.
+                            </p>
+                            <p class="text-slate-500 text-[10px] italic leading-relaxed">
+                                Nhà tư vấn am hiểu thị trường Đông Nam Á, kết hợp thành công bộ quy chuẩn kinh doanh đa quốc gia với thói quen và bản sắc địa phương.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SLIDE 5: CORPORATE M&A & RELOCATION -->
+                <div id="slide-5" class="slide-item w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/20">
+                            <span class="text-[10px] text-rose-400 font-semibold uppercase tracking-wider">PACKAGE 05 / GÓI 05</span>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h2 class="text-3xl md:text-4xl font-serif font-bold text-white">
+                                M&A, Closures & Site Relocations
+                            </h2>
+                            <h3 class="text-base md:text-lg font-medium text-slate-400 border-l-2 border-gold-500 pl-3">
+                                Mua Bán, Sáp Nhập, Đóng Cửa & Di Dời Cơ Sở
+                            </h3>
+                        </div>
+
+                        <div class="space-y-2">
+                            <p class="text-sm md:text-base text-slate-300 leading-relaxed font-light">
+                                Secure exit or transition strategies. Whether you are seeking due diligence on acquiring local assets, planning structured corporate closure with full tax clearance, or relocating industrial offices or production lines, we support you with complete compliance.
+                            </p>
+                            <p class="text-xs md:text-sm text-slate-400 italic font-light">
+                                Bảo mật tối đa chiến lược thoái lui và dịch chuyển. Cho dù bạn cần thực hiện thẩm định mua bán sáp nhập (M&A) tài sản bản địa, thực hiện thủ tục giải thể hoàn tất nghĩa vụ thuế sạch sẽ, hay di dời cơ sở hạ tầng nhà xưởng, chúng tôi cam kết bảo vệ vốn và tuân thủ tối đa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Advisor Profile & Details -->
+                    <div class="lg:col-span-5 bg-white/5 p-6 rounded-xl border border-white/10 space-y-5">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-10 h-10 rounded-full bg-rose-500/10 border border-rose-500/30 flex items-center justify-center text-rose-400">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xs uppercase text-slate-400 font-bold">Assigned Advisory Lead</h4>
+                                <p class="text-sm font-bold text-white">M&A & Restructuring Specialist</p>
+                                <p class="text-[9px] text-slate-500">Chuyên viên Cao cấp về Tái cấu trúc & M&A</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2 pt-4 border-t border-white/5 text-xs">
+                            <p class="text-slate-300 font-medium">Expertise / Chuyên môn hỗ trợ:</p>
+                            <p class="text-slate-400 text-[11px] leading-relaxed">
+                                Elite restructuring experts with high-level ministerial access, specializing in corporate liquidation audits, environmental, and transfer filings.
+                            </p>
+                            <p class="text-slate-500 text-[10px] italic leading-relaxed">
+                                Chuyên viên tái cấu trúc am hiểu thủ tục thanh lý, hoàn thuế doanh nghiệp và phối hợp đồng bộ với các cơ quan quản lý đô thị & môi trường.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Navigation Bottom Deck Controls -->
+    <footer class="w-full bg-danang-950/95 border-t border-white/10 py-5 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4 shrink-0 z-30">
+        <!-- Pagination Progress Dots & Indicators -->
+        <div class="flex items-center space-x-6 order-2 md:order-1">
+            <div class="flex space-x-2" id="pagination-dots">
+                <!-- Dots populated by JavaScript dynamically -->
+            </div>
+            <div class="text-xs font-mono text-slate-400">
+                Slide <span class="text-white font-bold" id="current-slide-num">1</span> of 6
+            </div>
+        </div>
+
+        <!-- Next / Back CTA controls -->
+        <div class="flex items-center space-x-3 w-full md:w-auto justify-between md:justify-end order-1 md:order-2">
+            <button onclick="navigateSlide(-1)" id="btn-back" class="px-5 py-2.5 rounded-lg border border-white/10 text-slate-400 hover:text-white hover:border-white/20 hover:bg-white/5 font-semibold text-xs transition-all disabled:opacity-40 disabled:hover:bg-transparent disabled:pointer-events-none">
+                <i class="fa-solid fa-chevron-left mr-2"></i> Back
+            </button>
+            <button onclick="navigateSlide(1)" id="btn-next" class="px-6 py-2.5 rounded-lg bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-white font-semibold text-xs transition-all flex items-center shadow-lg shadow-gold-500/10">
+                Next <i class="fa-solid fa-chevron-right ml-2 animate-pulse"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script>
+        // Total Slides count (0-indexed: 0 is Overview, 1-5 are the five packages)
+        const TOTAL_SLIDES = 6;
+        let currentSlide = 0;
+
+        // Visual labels for the slide categories
+        const slideLabels = [
+            "Overview",
+            "01. Welcome Meeting",
+            "02. Legal Setup",
+            "03. Legal Ops",
+            "04. Strategic Ops",
+            "05. M&A & Relocation"
+        ];
+
+        // Start animation & initialization on window load
+        window.onload = function() {
+            initPaginationDots();
+            updateSliderView();
+        };
+
+        // Initialize active dots indicators
+        function initPaginationDots() {
+            const container = document.getElementById('pagination-dots');
+            container.innerHTML = '';
+            for (let i = 0; i < TOTAL_SLIDES; i++) {
+                const dot = document.createElement('button');
+                dot.className = `w-2.5 h-2.5 rounded-full transition-all duration-300 ${i === 0 ? 'bg-gold-500 scale-125' : 'bg-slate-700 hover:bg-slate-500'}`;
+                dot.setAttribute('onclick', `changeSlide(${i})`);
+                dot.setAttribute('id', `dot-${i}`);
+                dot.setAttribute('title', slideLabels[i]);
+                container.appendChild(dot);
+            }
+        }
+
+        // Direct slide trigger
+        function changeSlide(slideIndex) {
+            if (slideIndex < 0 || slideIndex >= TOTAL_SLIDES) return;
+            
+            const prevSlide = currentSlide;
+            currentSlide = slideIndex;
+            
+            animateSlideTransition(prevSlide, currentSlide);
+            updateSliderView();
+        }
+
+        // Simple next/back navigation trigger
+        function navigateSlide(direction) {
+            const nextIdx = currentSlide + direction;
+            if (nextIdx >= 0 && nextIdx < TOTAL_SLIDES) {
+                changeSlide(nextIdx);
+            }
+        }
+
+        // Handles slide switching classes (animations)
+        function animateSlideTransition(fromIdx, toIdx) {
+            const slides = document.querySelectorAll('.slide-item');
+            
+            // Remove previous active and transition states
+            slides.forEach((slide, idx) => {
+                slide.classList.remove('active', 'exit-left');
+                if (idx === fromIdx) {
+                    slide.classList.add('exit-left');
+                }
+            });
+
+            // Set the new target slide to active
+            const targetSlide = document.getElementById(`slide-${toIdx}`);
+            if (targetSlide) {
+                targetSlide.classList.add('active');
+            }
+        }
+
+        // Keep UI indicators sync'd
+        function updateSliderView() {
+            // Update upper status badge
+            document.getElementById('slide-badge').innerText = slideLabels[currentSlide];
+
+            // Update numerical values
+            document.getElementById('current-slide-num').innerText = currentSlide + 1;
+
+            // Sync navigation buttons state
+            const btnBack = document.getElementById('btn-back');
+            const btnNext = document.getElementById('btn-next');
+
+            btnBack.disabled = (currentSlide === 0);
+
+            if (currentSlide === TOTAL_SLIDES - 1) {
+                btnNext.innerHTML = `Restart Deck <i class="fa-solid fa-rotate-left ml-2"></i>`;
+                btnNext.setAttribute('onclick', 'changeSlide(0)');
+            } else {
+                btnNext.innerHTML = `Next <i class="fa-solid fa-chevron-right ml-2 animate-pulse"></i>`;
+                btnNext.setAttribute('onclick', 'navigateSlide(1)');
+            }
+
+            // Sync dot state highlights
+            for (let i = 0; i < TOTAL_SLIDES; i++) {
+                const dot = document.getElementById(`dot-${i}`);
+                if (dot) {
+                    if (i === currentSlide) {
+                        dot.className = "w-2.5 h-2.5 rounded-full transition-all duration-300 bg-gold-500 scale-125";
+                    } else {
+                        dot.className = "w-2.5 h-2.5 rounded-full transition-all duration-300 bg-slate-700 hover:bg-slate-500";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
